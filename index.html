@@ -42,9 +42,12 @@
                     <ul>
                       <li>(we're hiring QA/Frontend/Cloud)</li>
                     </ul>
-                    <li>Introduced to TDD at a Software Craftmanship meetup in 2013</li>
-                    <li>Now find myself doing TDD even in solo side projects...</li>
-                    <li>@justinjmcc | justinjmccandless@gmail.com | justinmccandless.com</li>
+                    <li>Keep in touch</li>
+                    <ul>
+                      <li>@justinjmcc</li>
+                      <li>justinjmccandless@gmail.com</li>
+                      <li>justinmccandless.com</li>
+                    </ul>
                   </ul>
                 </script>
                 <aside class="notes">
@@ -53,10 +56,94 @@
               </section>
               <section data-markdown>
                 <script type="text/template">
-                  ## Stuff
+                  ## Hi I'm Justin
+                  <ul>
+                    <li>Introduced to TDD at a Software Craftmanship meetup in 2013</li>
+                    <li>Now find myself doing TDD even in solo side projects...</li>
+                  </ul>
                 </script>
                 <aside class="notes">
+                  - Thought TDD was radical at first.
+                  - At times company wants me to do TDD.
+                  - More into unit testing, started using it as a PRACTICAL tool.
                 </aside>
+              </section>
+              <section data-markdown>
+                <script type="text/template">
+                  ## What to Expect
+                  <ul>
+                    <li class="fragment">First a little bit of theory.</li>
+                    <li class="fragment">We'll work through an example together.</li>
+                    <li class="fragment">Then I'll turn it over to you guys to implement and test a feature on your own.</li>
+                  </ul>
+                  <aside class="notes">
+                    - In the example, I write the code, audience writes tests.
+                    - Mocha and Karma
+                  </aside>
+                </script>
+              </section>
+              <section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Test Driven Development
+                    <ol class="fragment">
+                      <li>Define the feature.</li>
+                      <li>Write tests to cover it.</li>
+                      <li>Code the feature.</li>
+                      <li>You're done when the tests pass.</li>
+                    </ol>
+                  </script>
+                  <aside class="notes">
+                    - Compare this to regular development, oh shit I haven't written any tests...
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Testing Vocabulary Test
+                    <ul>
+                      <li>Unit test?</li>
+                      <ul class="fragment">
+                        <li>Test a small unit of code directly, i.e. test a method.</li>
+                      </ul>
+                      <li>End-to-end test?</li>
+                      <ul class="fragment">
+                        <li>Test an overall feature as the user would experience it, like via browser automation.</li>
+                      </ul>
+                  </script>
+                  <aside class="notes">
+                    - Functional test, acceptance test, etc.
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Test Driven Development
+                    - In the strict definition, this would refer to unit tests.
+                    - Behavior Driven Development (BDD) focuses on defining and testing "behaviors".
+                  </script>
+                  <aside class="notes">
+                    - Cucumber is a good example of BDD.
+                    - Don't be strict on the test type, write what is most useful to you.
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## JS Tools for TDD
+                    - Need:
+                    <ul class="fragment">
+                      <li>Assertion library like [Chai](http://chaijs.com/)</li>
+                      <li>Test framework like [Mocha](https://mochajs.org/)</li>
+                      <li>Test runner like [Karma](https://karma-runner.github.io/1.0/index.html)</li>
+                    </ul>
+                    - Want:
+                    <ul class="fragment">
+                      <li>Mocking library like [Sinon](http://sinonjs.org/)</li>
+                      <li>E2E framework like [Nightwatch](http://nightwatchjs.org)</li>
+                    </ul>
+                  </script>
+                  <aside class="notes">
+                    - Lots of alternatives and other useful stuff too.  Most are very similar to these.
+                  </aside>
+                </section>
               </section>
 			</div>
 		</div>
