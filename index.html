@@ -176,16 +176,153 @@
               <section>
                 <section data-markdown>
                   <script type="text/template">
-                    ## An example
-                    - TODO:
-                    - Create a project and link off to it
-                    - Seriously tdd it yourself.
-                    - Collision detection?
-                    - Create branches for finished/unfinished feature
-                    - Set up testing with above tech
-                    - Ask audience for a single test case
-                    - I write code to pass it
-                    - Repeat until finished
+                    ## Example: SVG Dragging
+                    <img alt="Dragging Animation" src="./img/dragging.gif" />
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ### Two Coordinate Systems
+                    <img alt="Dragging Coordinates" src="./img/screenshot_dragging.png" />
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ### Two Coordinate Systems
+                    <img alt="Dragging Coordinates" src="./img/screenshot_dragging_points.png" />
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ### Convert Between Them
+                    ```
+                    /**
+                     * Convert between DOM coords and SVG viewbox coords
+                     * @param {Number} width
+                     * @param {Number} height
+                     * @param {Number} x
+                     * @param {Number} y
+                     * @returns {{ x: Number, y: Number }}
+                     */
+                    function toViewBoxCoords(width, height, x, y) {
+                      // TODO
+                      return {
+                        x: 0,
+                        y: 0,
+                      };
+                    }
+                    ```
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ### Tests First!
+                    ```
+                    const expect = require('chai').expect;
+                    const { toViewBoxCoords } = require('../src/svg');
+
+                    describe('svg', () => {
+                      describe('toViewBoxCoords', () => {
+                        // TODO
+                      });
+                    });
+                    ```
+                  </script>
+                  <aside class="notes">
+                    - Switch to live code at this point
+                    - Write test cases in spec first.
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ### Possible Tests
+                    ```
+                    const expect = require('chai').expect;
+                    const { toViewBoxCoords } = require('../src/svg');
+
+                    describe('svg', () => {
+                      describe('toViewBoxCoords', () => {
+                        const width = 1200;
+                        const height = 800;
+                        let x;
+                        let y;
+
+                        it('is a function', () => {
+                          expect(toViewBoxCoords).to.be.a('function');
+                        });
+
+                        describe('when browser point is at the origin', () => {
+                          beforeEach(() => {
+                            x = 0;
+                            y = 0;
+                          });
+
+                          it('gives an svg point at the origin', () => {
+                            const svgCoords = toViewBoxCoords(width, height, x, y);
+                            expect(svgCoords.x).to.equal(0);
+                            expect(svgCoords.y).to.equal(0);
+                          });
+                        });
+
+                        describe('when browser point is opposite the origin', () => {
+                          beforeEach(() => {
+                            x = width;
+                            y = height;
+                          });
+
+                          it('gives an svg point at the origin', () => {
+                            const svgCoords = toViewBoxCoords(width, height, x, y);
+                            expect(svgCoords.x).to.equal(svgConstants.DIMENSIONS_X);
+                            expect(svgCoords.y).to.equal(svgConstants.DIMENSIONS_Y);
+                          });
+                        });
+
+                        describe('when browser point is in the center', () => {
+                          beforeEach(() => {
+                            x = width / 2;
+                            y = height / 2;
+                          });
+
+                          it('gives an svg point at the center of the svg', () => {
+                            const svgCoords = toViewBoxCoords(width, height, x, y);
+                            expect(svgCoords.x).to.equal(svgConstants.DIMENSIONS_X / 2);
+                            expect(svgCoords.y).to.equal(svgConstants.DIMENSIONS_Y / 2);
+                          });
+                        });
+                      });
+                    });
+                    ```
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Possible Method
+                    ```
+                    /**
+                     * Convert between DOM coords and SVG viewbox coords
+                     * @param {Number} width
+                     * @param {Number} height
+                     * @param {Number} x
+                     * @param {Number} y
+                     * @returns {{ x: Number, y: Number }}
+                     */
+                    function toViewBoxCoords(width, height, x, y) {
+                      return {
+                        x: svgConstants.DIMENSIONS_X * x / width,
+                        y: svgConstants.DIMENSIONS_Y * y / height,
+                      };
+                    }
+                    ```
                   </script>
                   <aside class="notes">
                   </aside>
@@ -195,11 +332,206 @@
                 <section data-markdown>
                   <script type="text/template">
                     ## Your Turn
-                    - TODO:
-                    - Make master include the new feature and specs
-                    - Students check it out locally and run.
-                    - Come up with another feature idea, and let them write tests/code on own.
-                    - Ideally other options if they finish early. Mocking?
+                    <img alt="Collision Animation" src="./img/collision.gif" />
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Detect Collisions
+                    ```
+                    /**
+                     * Given two rectangles, returns true if they're overlapping, false otherwise
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxA
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxB
+                     * @returns {Boolean}
+                     */
+                    function isColliding(rectA, rectB) {
+                      // TODO
+                      return false;
+                    }
+                    ```
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Need Specs
+                    ```
+                    const expect = require('chai').expect;
+                    const { isColliding, toViewBoxCoords } = require('../src/svg');
+
+                    describe('svg', () => {
+                      describe('toViewBoxCoords', () => {
+                        ...
+                      });
+
+                      describe('isColliding', () => {
+                        // TODO
+                      });
+                    });
+                    ```
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Possible Tests
+                    ```
+                    const expect = require('chai').expect;
+                    const { isColliding, toViewBoxCoords } = require('../src/svg');
+
+                    describe('svg', () => {
+                      describe('toViewBoxCoords', () => {
+                        ...
+                      });
+
+                      describe('isColliding', () => {
+                        let boxA;
+                        let boxB;
+
+                        beforeEach(() => {
+                          boxA = {};
+                          boxB = {};
+                        });
+
+                        describe('when they\'re directly on top of each other', () => {
+                          beforeEach(() => {
+                            boxA = {
+                              x: 0,
+                              y: 0,
+                              width: 10,
+                              height: 10,
+                            };
+                            boxB = Object.assign({}, boxA);
+                          });
+
+                          it('returns true', () => {
+                            expect(isColliding(boxA, boxB)).to.be.true;
+                          });
+                        });
+
+                        describe('when one is fully to the side of the other', () => {
+                          beforeEach(() => {
+                            boxA = {
+                              x: 0,
+                              y: 0,
+                              width: 10,
+                              height: 10,
+                            };
+                            boxB = {
+                              x: 11,
+                              y: 0,
+                              width: 10,
+                              height: 10,
+                            };
+                          });
+
+                          it('returns false', () => {
+                            expect(isColliding(boxA, boxB)).to.be.false;
+                          });
+                        });
+
+                        describe('when they overlap in the x direction', () => {
+                          beforeEach(() => {
+                            boxA.x = 0;
+                            boxA.width = 10;
+                            boxB.x = 5;
+                            boxB.width = 10;
+                          });
+
+                          describe('when they also overlap in the y direction', () => {
+                            beforeEach(() => {
+                              boxA.y = 0;
+                              boxA.height = 10;
+                              boxB.y = 5;
+                              boxB.height = 10;
+                            });
+
+                            it('returns true', () => {
+                              expect(isColliding(boxA, boxB)).to.be.true;
+                            });
+                          });
+
+                          describe('when they do not overlap in the y direction', () => {
+                            beforeEach(() => {
+                              boxA.y = 0;
+                              boxA.height = 10;
+                              boxB.y = 20;
+                              boxB.height = 10;
+                            });
+
+                            it('returns false', () => {
+                              expect(isColliding(boxA, boxB)).to.be.false;
+                            });
+                          });
+                        });
+
+                        describe('when they do not overlap in the x direction', () => {
+                          beforeEach(() => {
+                            boxA.x = 0;
+                            boxA.width = 10;
+                            boxB.x = 20;
+                            boxB.width = 10;
+                          });
+
+                          describe('when they overlap in the y direction', () => {
+                            beforeEach(() => {
+                              boxA.y = 0;
+                              boxA.height = 10;
+                              boxB.y = 5;
+                              boxB.height = 10;
+                            });
+
+                            it('returns false', () => {
+                              expect(isColliding(boxA, boxB)).to.be.false;
+                            });
+                          });
+
+                          describe('when they do not overlap in the y direction', () => {
+                            beforeEach(() => {
+                              boxA.y = 0;
+                              boxA.height = 10;
+                              boxB.y = 20;
+                              boxB.height = 10;
+                            });
+
+                            it('returns false', () => {
+                              expect(isColliding(boxA, boxB)).to.be.false;
+                            });
+                          });
+                        });
+                      });
+                    });
+                    ```
+                  </script>
+                  <aside class="notes">
+                  </aside>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Possible Method
+                    ```
+                    /**
+                     * Given two rectangles, returns true if they're overlapping, false otherwise
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxA
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxB
+                     * @returns {Boolean}
+                     */
+                    function isColliding(rectA, rectB) {
+                      if (rectA.x > rectB.x + rectB.width || rectA.x + rectA.width < rectB.x) {
+                        return false;
+                      }
+                      if (rectA.y > rectB.y + rectB.height || rectA.y + rectA.height < rectB.y) {
+                        return false;
+                      }
+
+                      return true;
+                    }
+                    ```
                   </script>
                   <aside class="notes">
                   </aside>
