@@ -173,6 +173,38 @@
                     - Lots of alternatives and other useful stuff too.  Most are very similar to these.
                   </aside>
                 </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Basic Set Up
+                    Install
+
+                    ```
+                    $ npm install --save-dev mocha chai
+                    ```
+
+                    Write a spec
+
+                    ```
+                    const expect = require('chai').expect;
+
+                    describe('true', () => {
+                      it('is the truth', () => {
+                        expect(true).to.be.true;
+                      });
+                    });
+                    ```
+
+                    Run it
+
+                    ```
+                    $ mocha -w
+                    ```
+                  </script>
+                  <aside class="notes">
+                    - Spec should go like: test/truth_spec.js
+                    - Notice Mocha's great watch mode
+                  </aside>
+                </section>
               </section>
               <section>
                 <section data-markdown>
