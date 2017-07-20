@@ -29,10 +29,10 @@
                   # Practical TDD in JS
                   ## Justin McCandless
                   #### [justinmc.github.io/tdd-talk](https://justinmc.github.io/tdd-talk)
+                  <aside class="notes">
+                    - Let Rithm School introduce themselves?
+                  </aside>
                 </script>
-                <aside class="notes">
-                  - Let Rithm School introduce themselves?
-                </aside>
               </section>
               <section data-markdown>
                 <script type="text/template">
@@ -49,10 +49,10 @@
                       <li>justinmccandless.com</li>
                     </ul>
                   </ul>
+                  <aside class="notes">
+                    - Gauge TDD/coding experience in audience
+                  </aside>
                 </script>
-                <aside class="notes">
-                  - Gauge TDD/coding experience in audience
-                </aside>
               </section>
               <section data-markdown>
                 <script type="text/template">
@@ -61,12 +61,12 @@
                     <li>Introduced to TDD at a Software Craftmanship meetup in 2013</li>
                     <li>Now find myself doing TDD even in solo side projects...</li>
                   </ul>
+                  <aside class="notes">
+                    - Thought TDD was radical at first.
+                    - At times company wants me to do TDD.
+                    - More into unit testing, started using it as a PRACTICAL tool.
+                  </aside>
                 </script>
-                <aside class="notes">
-                  - Thought TDD was radical at first.
-                  - At times company wants me to do TDD.
-                  - More into unit testing, started using it as a PRACTICAL tool.
-                </aside>
               </section>
               <section data-markdown>
                 <script type="text/template">
@@ -92,10 +92,10 @@
                       <li>Code the feature.</li>
                       <li>Refactor.</li>
                     </ol>
+                    <aside class="notes">
+                      - Compare this to regular development, oh shit I haven't written any tests...
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Compare this to regular development, oh shit I haven't written any tests...
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -109,21 +109,22 @@
                       <ul class="fragment">
                         <li>Test an overall feature as the user would experience it, like via browser automation.</li>
                       </ul>
+                    </ul>
+                    <aside class="notes">
+                      - Functional test, acceptance test, etc.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Functional test, acceptance test, etc.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## Test Driven Development
                     - In the strict definition, this would refer to unit tests.
                     - Behavior Driven Development (BDD) focuses on defining and testing "behaviors".
+                    <aside class="notes">
+                      - Cucumber is a good example of BDD.
+                      - Don't be strict on the test type, write what is most useful to you.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Cucumber is a good example of BDD.
-                    - Don't be strict on the test type, write what is most useful to you.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -134,12 +135,12 @@
                       <li>Great to keep two devs on the same page during pairing.</li>
                       <li>Promotes writing atomic, testable code.</li>
                     </ul>
+                    <aside class="notes">
+                      - But why jump through all these hoops?
+                      - Promotes good habits and encourages good code!
+                      - Some would add that it's fun...
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - But why jump through all these hoops?
-                    - Promotes good habits and encourages good code!
-                    - Some would add that it's fun...
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -150,9 +151,9 @@
                       <li>What if you won't know what tests to write before you write the code?</li>
                       <li>By the way, Microsoft posted a blog post titled [#NoTDD](https://blogs.msdn.microsoft.com/ericgu/2017/06/22/notdd/) shortly after I chose this topic for this talk...</li>
                     </ul>
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -168,10 +169,10 @@
                       <li>Mocking library like [Sinon](http://sinonjs.org/)</li>
                       <li>E2E framework like [Nightwatch](http://nightwatchjs.org)</li>
                     </ul>
+                    <aside class="notes">
+                      - Lots of alternatives and other useful stuff too.  Most are very similar to these.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Lots of alternatives and other useful stuff too.  Most are very similar to these.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -199,11 +200,11 @@
                     ```
                     $ mocha -w
                     ```
+                    <aside class="notes">
+                      - Spec should go like: test/truth_spec.js
+                      - Notice Mocha's great watch mode
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Spec should go like: test/truth_spec.js
-                    - Notice Mocha's great watch mode
-                  </aside>
                 </section>
               </section>
               <section>
@@ -211,34 +212,34 @@
                   <script type="text/template">
                     ## Example: SVG Dragging
                     ### [https://github.com/justinmc/tdd-talk-app/tree/example1](https://github.com/justinmc/tdd-talk-app/tree/example1)
+                    <aside class="notes">
+                      - If you add `-complete` to the branch name, get the answers.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - If you add `-complete` to the branch name, get the answers.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## Example: SVG Dragging
                     <img alt="Dragging Animation" src="./img/dragging.gif" />
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ### Two Coordinate Systems
                     <img alt="Dragging Coordinates" src="./img/screenshot_dragging.png" />
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ### Two Coordinate Systems
                     <img alt="Dragging Coordinates" src="./img/screenshot_dragging_points.png" />
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -261,9 +262,9 @@
                       };
                     }
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -278,12 +279,12 @@
                       });
                     });
                     ```
+                    <aside class="notes">
+                      - Switch to live code at this point
+                      - Write test cases in spec first.
+                      - Bonus things to tets: invalid inputs, different width/height
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - Switch to live code at this point
-                    - Write test cases in spec first.
-                    - Bonus things to tets: invalid inputs, different width/height
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -344,9 +345,9 @@
                       });
                     });
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -368,9 +369,9 @@
                       };
                     }
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
               </section>
               <section>
@@ -378,17 +379,17 @@
                   <script type="text/template">
                     ## Your Turn
                     ### [https://github.com/justinmc/tdd-talk-app/tree/example2](https://github.com/justinmc/tdd-talk-app/tree/example2)
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## Your Turn
                     <img alt="Collision Animation" src="./img/collision.gif" />
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -405,9 +406,9 @@
                       return false;
                     }
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -426,9 +427,9 @@
                       });
                     });
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -441,18 +442,18 @@
                     - Open `src/svg.js` and `test/svg_spec.js`
                     - Modify the method `isColliding`
                     - Done? Play around with `example3`.
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## You TD Did It
+                    <aside class="notes">
+                      - How did you guys solve the method? Corners?
+                      - Useful? Hard to set up? Confident in code? Compare to no tests or tests last.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - How did you guys solve the method? Corners?
-                    - Useful? Hard to set up? Confident in code? Compare to no tests or tests last.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -584,9 +585,9 @@
                       });
                     });
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -609,9 +610,9 @@
                       return true;
                     }
                     ```
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
               </section>
               <section>
@@ -623,9 +624,9 @@
                         <li>how to find pieces of our projects that are well suited to TDD</li>
                         <li>and how to use TDD to make development better.</li>
                       </ul>
+                      <aside class="notes">
+                      </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
@@ -641,30 +642,30 @@
                         <li>[Travis CI](https://travis-ci.org/) can be set up to run all unit tests on every commit push.</li>
                       </ul>
                     </ul>
+                    <aside class="notes">
+                      - If you think that what you learned here is valuable and want more...
+                      - Unit testing is a deep skill to develop.
+                      - Travis is free for open source right?
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - If you think that what you learned here is valuable and want more...
-                    - Unit testing is a deep skill to develop.
-                    - Travis is free for open source right?
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## PRACTICAL tdd
                     - No programming methodology is a perfect ideal.
                     - Know your options well, and above all, focus on building an amazing product.
+                    <aside class="notes">
+                      - When something is a great fit for helping you deliver an amazing project, use it.  When it's not, don't.
+                    </aside>
                   </script>
-                  <aside class="notes">
-                    - When something is a great fit for helping you deliver an amazing project, use it.  When it's not, don't.
-                  </aside>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## Thank You!
                     Slides: [https://justinmc.github.io/tdd-talk/](https://justinmc.github.io/tdd-talk/)
+                    <aside class="notes">
+                    </aside>
                   </script>
-                  <aside class="notes">
-                  </aside>
                 </section>
               </section>
 			</div>
