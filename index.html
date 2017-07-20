@@ -40,12 +40,12 @@
                   <ul class="fragment">
                     <li>Engineer at Autodesk Life Sciences</li>
                     <ul>
-                      <li>(we're hiring QA/Frontend/Cloud)</li>
+                      <li>(we're hiring QA?/Frontend/Cloud)</li>
                     </ul>
                     <li>Keep in touch</li>
                     <ul>
-                      <li>@justinjmcc</li>
                       <li>justinjmccandless@gmail.com</li>
+                      <li>@justinjmcc</li>
                       <li>justinmccandless.com</li>
                     </ul>
                   </ul>
@@ -90,7 +90,7 @@
                       <li>Define the feature.</li>
                       <li>Write tests to cover it.</li>
                       <li>Code the feature.</li>
-                      <li>You're done when the tests pass.</li>
+                      <li>Refactor.</li>
                     </ol>
                   </script>
                   <aside class="notes">
@@ -138,6 +138,7 @@
                   <aside class="notes">
                     - But why jump through all these hoops?
                     - Promotes good habits and encourages good code!
+                    - Some would add that it's fun...
                   </aside>
                 </section>
                 <section data-markdown>
@@ -213,6 +214,7 @@
                     ```
                     /**
                      * Convert between DOM coords and SVG viewbox coords
+                     * SVG dimensions are svgConstants.DIMENSIONS_X and svgConstants.DIMENSIONS_Y
                      * @param {Number} width
                      * @param {Number} height
                      * @param {Number} x
@@ -248,6 +250,7 @@
                   <aside class="notes">
                     - Switch to live code at this point
                     - Write test cases in spec first.
+                    - Bonus things to tets: invalid inputs, different width/height
                   </aside>
                 </section>
                 <section data-markdown>
@@ -319,6 +322,7 @@
                     ```
                     /**
                      * Convert between DOM coords and SVG viewbox coords
+                     * SVG dimensions are svgConstants.DIMENSIONS_X and svgConstants.DIMENSIONS_Y
                      * @param {Number} width
                      * @param {Number} height
                      * @param {Number} x
@@ -360,8 +364,8 @@
                     ```
                     /**
                      * Given two rectangles, returns true if they're overlapping, false otherwise
-                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxA
-                     * @param {{ x: Number, y: Number, width: Number, height: Number }} boxB
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} rectA 
+                     * @param {{ x: Number, y: Number, width: Number, height: Number }} rectB
                      * @returns {Boolean}
                      */
                     function isColliding(rectA, rectB) {
@@ -413,6 +417,7 @@
                     ## You TD Did It
                   </script>
                   <aside class="notes">
+                    - How did you guys solve the method? Corners?
                     - Useful? Hard to set up? Confident in code? Compare to no tests or tests last.
                   </aside>
                 </section>
@@ -597,7 +602,7 @@
                       <ul class="fragment">
                         <li>Learn how to mock dependencies when you need to with things like [Sinon](http://sinonjs.org/), and learn how to write end to end tests with something like [Nightwatch](http://nightwatchjs.org).</li>
                       </ul>
-                      <li class="fragment">Learn how to creat a solid unit testing setup for a real project.</li>
+                      <li class="fragment">Learn how to create a solid unit testing setup for a real project.</li>
                       <ul class="fragment">
                         <li>[npm scripts](https://docs.npmjs.com/misc/scripts) make running dev scripts like this easy.</li>
                         <li>[Travis CI](https://travis-ci.org/) can be set up to run all unit tests on every commit push.</li>
