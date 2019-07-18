@@ -1,6 +1,5 @@
-# Practical TDD in JavaScript
-These are the slides for my talk, Practical TDD in JavaScript.
+# An Introduction to Testing Software Projects
+These are the slides for my talk "An Introduction to Testing Software Projects".  This was originally forked from my more specific talk, [Practical TDD in JavaScript](https://github.com/justinmc/tdd-talk).
 
-These slides are running live at [https://justinmc.github.io/tdd-talk/](https://justinmc.github.io/tdd-talk/).
-
-The Github page for the referenced example app is at [https://github.com/justinmc/tdd-talk-app](https://github.com/justinmc/tdd-talk-app), and it's running live at [https://justinmc.github.io/tdd-talk-app/](https://justinmc.github.io/tdd-talk-app/).
+TODO: Get the slides running live and add the link here.
+TODO: Add the sample app link here.
