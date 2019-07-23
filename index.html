@@ -64,7 +64,6 @@
                 <script type="text/template">
                   ## What to Expect
                   <ul>
-                    <li class="fragment">Why test?</li>
                     <li class="fragment">Types of testing</li>
                     <li class="fragment">We'll work through an example together</li>
                     <li class="fragment">Testing in the real world</li>
@@ -201,6 +200,8 @@
                     ### [https://github.com/justinmc/testing-talk-project](https://github.com/justinmc/testing-talk-project)
                     <aside class="notes">
                       - Live coding.
+                      - I will walk through building a project like this from scratch.
+                      - Setting everything up, writing the code, and testing it.
                     </aside>
                   </script>
                 </section>
@@ -222,8 +223,8 @@
                   <script type="text/template">
                     ## Testing in the Real World
                     <ul>
-                      <li class="fragment">Companies and projects use all of these strategies and more everyday.</li>
-                      <li class="fragment">Let's take a look at a real example from the project I contribute to, Flutter.</li>
+                      <li>Companies and projects use all of these strategies and more everyday.</li>
+                      <li>Let's take a look at a real example from the project I contribute to, Flutter.</li>
                     </ul>
                     <aside class="notes">
                     </aside>
@@ -233,8 +234,10 @@
                   <script type="text/template">
                     ## A Flutter pull request
                     <ul>
-                      <li class="fragment">A developer graciously decided to update Flutter's iOS switch widget to match the new iOS 13 visual style.</li>
-                      <li class="fragment">Let's look at how tests affected his work.</li>
+                      <li>A developer graciously decided to update Flutter's iOS switch widget to match the new iOS 13 visual style.</li>
+                      <img alt="iOS 12 Switch" src="./img/switch_12.png" />
+                      <img alt="iOS 13 Switch" src="./img/switch_13.png" />
+                      <li>Let's look at how tests affected his work.</li>
                       <li class="fragment">https://github.com/flutter/flutter/pull/36087</li>
                     </ul>
                     <aside class="notes">
@@ -243,40 +246,14 @@
                 </section>
                 <section data-markdown>
                   <script type="text/template">
-                    ## A Flutter pull request - existing tests
-                    <ul>
-                      <li class="fragment"></li>
-                    </ul>
-                    <aside class="notes">
-                    </aside>
-                  </script>
-                </section>
-                <section data-markdown>
-                  <script type="text/template">
-                    ## A Flutter pull request - manual testing
-                    <ul>
-                      <li class="fragment"></li>
-                    </ul>
-                    <aside class="notes">
-                    </aside>
-                  </script>
-                </section>
-                <section data-markdown>
-                  <script type="text/template">
-                    ## A Flutter pull request - request for goldens tests
-                    <ul>
-                      <li class="fragment"></li>
-                    </ul>
-                    <aside class="notes">
-                    </aside>
-                  </script>
-                </section>
-                <section data-markdown>
-                  <script type="text/template">
-                    ## A Flutter pull request - up to standards
-                    <ul>
-                      <li class="fragment">analyze, code cov, Cirrus</li>
-                      <li class="fragment"></li>
+                    ## A Flutter pull request - analysis
+                    <ul class="fragment">
+                      <li>Existing tests of all kinds run immediately.</li>
+                      <li>Other things like code style and code coverage are automatically evaluated.</li>
+                      <li>Even small visual pull requests require tests on Flutter.</li>
+                      <li>Visual diffing tests are a type of end to end test.</li>
+                      <li>Other developers review code and manually test.</li>
+                      <li>Once everything is green, merge it!</li>
                     </ul>
                     <aside class="notes">
                     </aside>
@@ -285,9 +262,46 @@
                 <section data-markdown>
                   <script type="text/template">
                     ## A Flutter pull request - post merge
+                    <ul class="fragment">
+                      <li>After being merged into master, a new Flutter build is kicked off. https://flutter-dashboard.appspot.com/build.html</li>
+                      <li>A new version of Flutter is built and even more tests are run.</li>
+                      <li>Build tests: a build is attempted on Mac, Windows, and Linux.</li>
+                      <li>Device lab tests: Real devices are driven through some more E2E tests.</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                  </script>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## A Flutter pull request - release
+                    <ul class="fragment">
+                      <li>Flutter tries to release a new version every day or so.</li>
+                      <li>The latest build is taken and rolled out to all dependent Google products.</li>
+                      <li>All of **their** tests are run using the new version.</li>
+                      <li>Small failures are fixed, big failures have the offending code reverted.</li>
+                      <li class="fragment">All of Flutter's releases: https://github.com/flutter/flutter/releases</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                  </script>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## The engineers that make this process work
                     <ul>
-                      <li class="fragment"></li>
-                      <li class="fragment"></li>
+                      <li>Software Engineer</li>
+                      <ul>
+                        <li class="fragment">Writes, and is responsible for, the PR and its tests through the whole process into production.</li>
+                      </ul>
+                      <li>Dev Ops or Infrastructure Engineer</li>
+                      <ul>
+                        <li class="fragment">Responsible for ensuring the smooth flowing process of getting code into production and keeping it running.</li>
+                      </ul>
+                      <li>QA Engineer</li>
+                      <ul class="fragment">
+                        <li>Frontline defense against bugs, regressions, and even misconmmunications.</li>
+                      </ul>
                     </ul>
                     <aside class="notes">
                     </aside>
@@ -297,11 +311,12 @@
               <section>
                 <section data-markdown>
                   <script type="text/template">
-                    ## That's TDD
+                    ## That's Testing
                       <ul class="fragment">
-                        <li>I hope you learned how to quickly and unintrusively add TDDable unit testing to a project</li>
-                        <li>how to find pieces of our projects that are well suited to TDD</li>
-                        <li>and how to use TDD to make development better.</li>
+                        <li>The process of writing bug free code ranges from informal and hacky to structured and automated.</li>
+                        <li>Both are perfectly valid.</li>
+                        <li>Each project requires its own specific level of testing and infrastructure.</li>
+                        <li>Understand your project, understand the tools available, and do what makes you most productive.</li>
                       </ul>
                       <aside class="notes">
                       </aside>
@@ -310,53 +325,20 @@
                 <section data-markdown>
                   <script type="text/template">
                     ## From Here
-                    <ul>
-                      <li class="fragment">Become a pro at testing.</li>
-                      <ul class="fragment">
-                        <li>Learn how to mock dependencies when you need to with things like [Sinon](http://sinonjs.org/).</li>
-                        <li>Understand how to test an [asynchronous method in Mocha](https://mochajs.org/#asynchronous-code).</li>
-                        <li>Try including the DOM in your tests, which you can even [do within a framework like React](https://facebook.github.io/react/docs/test-utils.html)</li>
-                        <li>Learn how to write end to end tests with something like [Nightwatch](http://nightwatchjs.org).</li>
-                      </ul>
+                    <ul class="fragment">
+                      <li>Poke around the [Flutter repo](https://github.com/flutter/flutter) and see how we do things.</li>
+                      <li>Try writing some tests with tools like [Mocha](https://mochajs.org), [Jest](https://jestjs.io), [Karma](https://karma-runner.github.io/latest/index.html)], or [nightwatch](https://nightwatchjs.org).
+                      <li>Play around with testing and build infrastructure like [Cirrus](https://cirrus-ci.org) or [Travis](https://travis-ci.org).</li>
+                      <li>Try applying any of the above to a personal project and decide for yourself if it makes your life easier or slows you down.</li>
                     </ul>
                     <aside class="notes">
-                      - If you think that what you learned here is valuable and want more...
-                      - Unit testing is a deep skill to develop.
-                      - Travis is free for open source right?
-                    </aside>
-                  </script>
-                </section>
-                <section data-markdown>
-                  <script type="text/template">
-                    ## From Here
-                    <ul>
-                      <li class="fragment">Learn how to create a solid unit testing setup for a real project.</li>
-                      <ul class="fragment">
-                        <li>[npm scripts](https://docs.npmjs.com/misc/scripts) make running dev scripts like this easy.</li>
-                        <li>[Travis CI](https://travis-ci.org/) can be set up to run all unit tests on every commit push.</li>
-                      </ul>
-                    </ul>
-                    <aside class="notes">
-                      - If you think that what you learned here is valuable and want more...
-                      - Unit testing is a deep skill to develop.
-                      - Travis is free for open source right?
-                    </aside>
-                  </script>
-                </section>
-                <section data-markdown>
-                  <script type="text/template">
-                    ## PRACTICAL tdd
-                    - No programming methodology is a perfect ideal.
-                    - Know your options well, and above all, focus on building an amazing product.
-                    <aside class="notes">
-                      - When something is a great fit for helping you deliver an amazing project, use it.  When it's not, don't.
                     </aside>
                   </script>
                 </section>
                 <section data-markdown>
                   <script type="text/template">
                     ## Thank You!
-                    Slides: [https://justinmc.github.io/tdd-talk/](https://justinmc.github.io/tdd-talk/)
+                    Slides: [https://justinmc.github.io/testing-talk/](https://justinmc.github.io/testing-talk/)
                     <aside class="notes">
                     </aside>
                   </script>
