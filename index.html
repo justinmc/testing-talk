@@ -149,25 +149,18 @@
       ✓ should the first index when the value is present at multiple indices
     #reverse
       ✓ modifies the original array in place
-
-  The plus sign +
-    1) Adds 1 and 1 to get 3
-    ✓ Adds 2 and 1 to get 3
+    #length
+      1) gives 1 for an empty array
 
 
-  4 passing (7ms)
+  3 passing (5ms)
   1 failing
 
-  1) The plus sign +
-       Adds 1 and 1 to get 3:
-
-      AssertionError [ERR_ASSERTION]: 2 == 3
-      + expected - actual
-
-      -2
-      +3
-
-      at Context.it (test_array.spec.js:24:12)
+  1) Array
+       #length
+         gives 1 for an empty array:
+     AssertionError [ERR_ASSERTION]: 1
+      at Context.it (test_array.spec.js:23:7)
                     ```
                     <aside class="notes">
                       - Tells you the line number of the failure too.
@@ -178,7 +171,7 @@
                   <script type="text/template">
                     ## End to End Testing
                     ```
-                    $ npm install --save-dev nightwatch
+                    $ npm install --save-dev nightwatch chromedriver
                     ```
                     ```
                     module.exports = {
@@ -208,6 +201,36 @@
                       - Similar to how the user experiences your product.
                       - Much slower.
                       - Many dependencies (what happens if your local internet goes down?).
+                    </aside>
+                  </script>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## End to End Testing - running
+                    <img src="./img/nightwatch.gif" />
+                    <aside class="notes">
+                      - I'm only running the command in this, nightwatch is doing the rest automatically.
+                    </aside>
+                  </script>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## End to End Testing - output
+                    ```
+[Google Test] Test Suite
+========================
+Running:  Demo test Google
+
+✔ Element <body> was visible after 20 milliseconds.
+✔ Testing if the page title equals "Google"  - 6 ms.
+✔ Testing if element <input[type=text]> is visible  - 21 ms.
+✔ Element <input[name=btnK]> was visible after 532 milliseconds.
+✔ Testing if element <div.r h3> contains text: "Rembrandt - Wikipedia"  - 31 ms.
+
+OK. 5 assertions passed. (3.746s)
+                    ```
+                    <aside class="notes">
+                      - 1000x slower than the unit tests above.
                     </aside>
                   </script>
                 </section>
@@ -248,9 +271,9 @@
                     ## Advanced Unit Testing Topics
                     <ul>
                       <li>Unit testing can be much deeper than this.</li>
-                      <li>Take a look at the [documentation for Chai](https://www.chaijs.com/api/assert/) to see all the different assertions you can make.</li>
-                      <li>Check out [Sinon](https://sinonjs.org) for mocks, spies, and stubs.</li>
-                      <li>Think about how to write your code in a way that makes it easily unit testable.</li>
+                      <li class="fragment">Take a look at the <a target="_blank" href="https://www.chaijs.com/api/assert/">documentation for Chai</a> to see all the different assertions you can make.</li>
+                      <li class="fragment">Check out <a target="_blank" href="https://sinonjs.org">Sinon</a> for mocks, spies, and stubs.</li>
+                      <li class="fragment">Think about how to write your code in a way that makes it easily unit testable.</li>
                     <aside class="notes">
                     </aside>
                   </script>
