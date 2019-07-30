@@ -107,6 +107,7 @@
                     </ul>
                     <aside class="notes">
                       - Lots of synonyms and overlapping ideas. Functional test, acceptance test, integration test, etc.
+                      - Example: Twitter clone.
                     </aside>
                   </script>
                 </section>
@@ -135,6 +136,41 @@
                     <aside class="notes">
                       - Very fast.
                       - Few dependencies.
+                    </aside>
+                  </script>
+                </section>
+                <section data-markdown>
+                  <script type="text/template">
+                    ## Unit Testing - output
+                    ```
+  Array
+    #indexOf()
+      ✓ should return -1 when the value is not present
+      ✓ should the first index when the value is present at multiple indices
+    #reverse
+      ✓ modifies the original array in place
+
+  The plus sign +
+    1) Adds 1 and 1 to get 3
+    ✓ Adds 2 and 1 to get 3
+
+
+  4 passing (7ms)
+  1 failing
+
+  1) The plus sign +
+       Adds 1 and 1 to get 3:
+
+      AssertionError [ERR_ASSERTION]: 2 == 3
+      + expected - actual
+
+      -2
+      +3
+
+      at Context.it (test_array.spec.js:24:12)
+                    ```
+                    <aside class="notes">
+                      - Tells you the line number of the failure too.
                     </aside>
                   </script>
                 </section>
@@ -361,7 +397,8 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
+				],
+                history: true,
 			});
 		</script>
 	</body>
